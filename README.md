@@ -76,5 +76,9 @@ action_plugin :User, :like, :Post -> generate instance methods:
 
 @post.like_users
 
-@user.like_post?
+@user.like_post @post
+
+@user.unlike_post @post
+
+@user.like_post? @post
 ```
