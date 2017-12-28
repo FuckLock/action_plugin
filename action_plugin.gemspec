@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["baodongdong"]
   spec.email         = ["baodongdong@tigerjoys.com"]
 
-  spec.summary       = %q{action_plugin}
-  spec.description   = %q{action_plugin}
-  spec.homepage      = "https://github.com/"
+  spec.summary       = %q{Plugin different kind of actions Like, Follow, Star ...}
+  spec.description   = %q{Plugin different kind of actions Like, Follow, Star ...}
+  spec.homepage      = "https://github.com/baodongdongCK/action_plugin"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
