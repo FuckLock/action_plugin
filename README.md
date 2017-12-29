@@ -23,7 +23,7 @@ Or install it yourself as:
 Generate Migrations:
 
 ```ruby
-$ rails g action_store:install
+$ rails g action_plugin:install
 ```
 
 ```ruby
