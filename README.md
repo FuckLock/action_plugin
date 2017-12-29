@@ -27,7 +27,11 @@ $ rails g action_store:install
 ```
 
 ```ruby
-migration 20170208024704_create_actions.rb from action_plugin
+create migration 20170208024704_create_actions.rb
+```
+
+```ruby
+rails db:migrate
 ```
 
 ## Define Actions
@@ -54,31 +58,39 @@ end
 ## some instance methods:
 
 ```ruby
-action_target_actions
-
-action_targets
-
-action_subject_actions
-
-action_subjects
-
-action_target?
-
 for example:
 
-action_plugin :User, :like, :Post -> generate instance methods:
+class User < ActiveRecord::Base
+  action_plugin :User, :like, :Topic
+end
 
-@user.like_post_actions
+If you have the definition above the following methods are generated
 
-@user.like_posts
+# Returns the actions of all the topics that this user likes
+@user.like_topic_actions
 
-@post.like_user_actions
+# Return to all the topics that this user likes
+@user.like_topics
 
-@post.like_users
+# Return to all the topic id that this user likes
+@user.like_topic_ids
 
-@user.like_post @post
+# Return all user actions that like this topic
+@topic.like_user_actions
 
-@user.unlike_post @post
+# Returns all users who like the topic
+@topic.like_users
 
-@user.like_post? @post
+# Returns all user id who like the topic
+@topic.like_user_ids
+
+# Users like to create an action record
+@user.like_topic @topic
+
+#The user does not like the topic to delete an action record
+@user.unlike_topic @topic
+
+#Do users like the theme
+@user.like_topic? @topic
+
 ```
