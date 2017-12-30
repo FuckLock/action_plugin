@@ -1,4 +1,4 @@
-class CreateActions < ActiveRecord::Migration[5.0]
+class CreateActions < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :actions do |t|
       t.integer :subject_id
