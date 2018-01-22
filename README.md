@@ -58,8 +58,9 @@ end
 ## some instance methods:
 
 ```ruby
-for example:
+for example one:
 
+# Users like topic can be defined as follows.
 class User < ActiveRecord::Base
   action_plugin :User, :like, :Topic
 end
@@ -67,22 +68,22 @@ end
 If you have the definition above the following methods are generated
 
 # Returns the actions of all the topics that this user likes
-@user.like_topic_actions
+@user.likeing_topic_actions
 
 # Return to all the topics that this user likes
-@user.like_topics
+@user.likeing_topics
 
 # Return to all the topic id that this user likes
-@user.like_topic_ids
+@user.likeing_topic_ids
 
 # Return all user actions that like this topic
-@topic.like_user_actions
+@topic.likeed_user_actions
 
 # Returns all users who like the topic
-@topic.like_users
+@topic.likeed_users
 
 # Returns all user id who like the topic
-@topic.like_user_ids
+@topic.likeed_user_ids
 
 # Users like to create an action record
 @user.like_topic @topic
@@ -92,5 +93,45 @@ If you have the definition above the following methods are generated
 
 #Do users like the theme
 @user.like_topic? @topic
+
+```
+
+```ruby
+
+for example two:
+
+# Users can follow the definition of other people.
+class User < ActiveRecord::Base
+  action_plugin :User, :follow, :User
+end
+
+If you have the definition above the following methods are generated
+
+# Returns current_user following other people relations
+current_user.following_user_actions
+
+# Return current_user following all users
+current_user.following_users
+
+# Return current_user following all user ids
+current_user.following_user_ids
+
+# Return All user relationships that the user is concerned with
+user.followed_user_actions
+
+# Returns All users that the user is concerned about.
+user.followed_users
+
+# Returns all user followed user ids
+user.followed_user_ids
+
+# Users follow to create an relation
+current_user.follow_user user
+
+#The user does not unfollow the user to delete an relation
+current_user.unfollow_user user
+
+#Do users follow the theme
+current_user.follow_user? user
 
 ```

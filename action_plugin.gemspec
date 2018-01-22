@@ -6,8 +6,8 @@ require "action_plugin/version"
 Gem::Specification.new do |spec|
   spec.name          = "action_plugin"
   spec.version       = ActionPlugin::VERSION
-  spec.authors       = ["baodongdong"]
-  spec.email         = ["baodongdong@tigerjoys.com"]
+  spec.authors       = ["baodongdongCK"]
+  spec.email         = ["bao1214063293@gmail.com"]
 
   spec.summary       = %q{Plugin different kind of actions Like, Follow, Star ...}
   spec.description   = %q{Plugin different kind of actions Like, Follow, Star ...}
